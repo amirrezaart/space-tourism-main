@@ -100,13 +100,16 @@
     padding: 26px 0 30px 0;
     height: 96px;
   }
+  .menu-container li a.active-link {
+    border-bottom: 4px solid rgb(255, 255, 255);
+  }
   .menu-container li a:hover {
     border-right: none;
     border-bottom: 4px solid rgba(255, 255, 255, 0.5);
   }
-  .selected {
+  /* .selected {
     border-bottom: 4px solid rgba(255, 255, 255);
-  }
+  } */
   .site-nav hr {
     display: none;
   }
@@ -121,6 +124,10 @@
   .menu-container li a {
     font-size: 1rem;
   }
+  .menu-container li a.active-link {
+    border-bottom: 4px solid rgb(255, 255, 255);
+  }
+
   .menu-container li span {
     display: block;
   }

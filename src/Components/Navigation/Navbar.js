@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink, withRouter } from "react-router-dom";
 import LogoIcon from "../../assets/shared/logo.svg";
 import HamburgerIcon from "../../assets/shared/icon-hamburger.svg";
 import CloseIcon from "../../assets/shared/icon-close.svg";
@@ -27,28 +27,36 @@ function Navbar() {
       </div>
       <ul className={menuState ? "menu-container  active" : "menu-container "}>
         <li>
-          <Link to="/">
+          <NavLink to="/" exact
+            activeClassName="active-link"
+          >
             <span>00</span> HOME
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/destination">
+          <NavLink to="/destination"
+            activeClassName="active-link"
+          >
             <span>01</span> DESTINATION
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/crew">
+          <NavLink to="/crew"
+            activeClassName="active-link"
+          >
             <span>02</span> CREW
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/technology">
+          <NavLink to="/technology"
+            activeClassName="active-link"
+          >
             <span>03</span> TECHNOLOGY
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </nav>
   );
 }
 
-export default Navbar;
+export default withRouter(Navbar);
