@@ -1,0 +1,140 @@
+.site-nav {
+  margin: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 10px;
+  box-sizing: border-box;
+}
+.site-nav .logo {
+  padding-top: 24px;
+}
+.hamburgericon-container {
+  grid-column: 8/9;
+  justify-self: center;
+  align-self: center;
+  padding-top: 24px;
+  z-index: 99;
+}
+.menu-container {
+  /* sidebar section */
+  min-width: 254px;
+  width: 100%;
+  max-width: 65%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(81.5485px);
+  top: 0;
+  right: -50vh;
+  z-index: 90;
+  position: fixed;
+  transition: all 1s ease;
+
+  /* link section */
+  padding: 120px 0 0 32px;
+  user-select: none;
+  box-sizing: border-box;
+}
+.menu-container.active {
+  right: 0;
+}
+
+.menu-container li a {
+  font-family: "BarlowCondensed-Regular";
+  font-size: 16px;
+  height: 31px;
+  margin-bottom: 30px;
+  letter-spacing: 2.7px;
+  transition: all 0.2s ease-out;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+.menu-container li span {
+  font-weight: bold;
+  display: block;
+  margin-right: 10px;
+}
+.menu-container li a:hover {
+  border-right: 4px solid #fff;
+  cursor: pointer;
+}
+.site-nav hr {
+  display: none;
+}
+
+@media screen and (min-width: 450px) {
+  .hamburgericon-container {
+    display: none;
+  }
+  .site-nav {
+    margin-right: 0;
+    margin-bottom: 3rem;
+  }
+  .menu-container {
+    /* bar section */
+    position: unset;
+    display: grid;
+    grid-column: 4/9;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    align-items: center;
+    justify-items: center;
+    justify-self: self-end;
+    width: 70%;
+    min-width: 350px;
+    max-width: 100%;
+    transition: none;
+    height: 96px;
+    right: 0;
+
+    /* link section */
+    padding: 0 20px 0 0;
+  }
+
+  .menu-container li span {
+    display: none;
+  }
+  .menu-container li a {
+    font-size: 14px;
+    margin: 0;
+    padding: 26px 0 30px 0;
+    height: 96px;
+  }
+  .menu-container li a:hover {
+    border-right: none;
+    border-bottom: 4px solid rgba(255, 255, 255, 0.5);
+  }
+  .selected {
+    border-bottom: 4px solid rgba(255, 255, 255);
+  }
+  .site-nav hr {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .menu-container {
+    margin-top: 40px;
+    width: 100%;
+    padding: 0 20px;
+  }
+  .menu-container li a {
+    font-size: 1rem;
+  }
+  .menu-container li span {
+    display: block;
+  }
+  .site-nav .logo {
+    margin-top: 40px;
+    grid-column: 1/2;
+  }
+  .site-nav hr {
+    display: block;
+    grid-column: 2/3;
+    height: 1px;
+    width: 232%;
+    z-index: 91;
+    margin-top: 89px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}

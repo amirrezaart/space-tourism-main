@@ -1,0 +1,80 @@
+.tabs {
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.tabs li {
+  font-size: 1rem;
+  font-family: "BarlowCondensed-Regular";
+  text-transform: uppercase;
+  padding: 1rem;
+  color: #d0d6f9;
+  letter-spacing: 0.15rem;
+  transition: all 0.15s ease-out;
+}
+.tabs li:hover {
+  cursor: pointer;
+  border-bottom: 2px solid #d0d6f9;
+}
+.tabs li.selected-text {
+  border-bottom: 2px solid #fff;
+}
+.tabs .disk {
+  opacity: 0;
+  width: 0;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+}
+.tabs .disknumber {
+  font-family: "Bellefair-Regular";
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 60px;
+  margin: 10px;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+}
+.tabs .disknumber:hover {
+  border: 1px solid #fff;
+}
+.tabs li.selected-disknumber {
+  background: #fff;
+  color: #000;
+}
+.tabs label {
+  padding: 1rem;
+  background: url(../../assets/tabs/Oval_3.png) no-repeat;
+  cursor: pointer;
+  background-position: center;
+  transition: all 0.3s ease-out;
+}
+.tabs label.selected-disk {
+  background: url(../../assets/tabs/Oval.png) no-repeat;
+  background-position: center;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container .detail {
+  display: none;
+  animation: slide 2s ease forwards;
+}
+.container .detail-show {
+  display: block;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(-100px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
